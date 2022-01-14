@@ -152,11 +152,31 @@ LOTR_LeaveTheRing = Scene('lotr-fellowship', "The Lord of the Rings: The Fellows
     Message(2.5, Gandalf, "I am not trying to rob you. I'm trying to help you."),
 ])
 
+Batman = Persona('Batman', icon_url='https://nicwaller-public.s3-us-west-2.amazonaws.com/personas/batman.jpg')
+LuciusFox = Persona('Lucius Fox', icon_url='https://nicwaller-public.s3-us-west-2.amazonaws.com/personas/luciusfox.jpg')
+BatmanTheDarkKnight_TooMuchPower = Scene('batman-tdk-power', "The Dark Knight (2008)", [
+    # Batman: [seeing the wall of monitors for the first time at the Applied Sciences division in Wayne Enterprises]
+    Message(0, Batman, "Beautiful, isn't it?"),
+    Message(2, LuciusFox, "Beautiful... unethical... dangerous."),
+    Message(2, LuciusFox, "You've turned every cellphone in Gotham into a microphone."),
+    Message(2, Batman, "And a high-frequency generator-receiver."),
+    Message(2, LuciusFox, "You took my sonar concept and applied it to every phone in the city."),
+    Message(2, LuciusFox, "With half the city feeding you sonar, you can image all of Gotham."),
+    Message(1, LuciusFox, "This is *wrong*."),
+    Message(2, Batman, "I've gotta find this man, Lucius."),
+    Message(2, LuciusFox, "At what cost?"),
+    Message(2.5, Batman, "The database is null-key encrypted. It can only be accessed by one person."),
+    Message(2.5, LuciusFox, "This is too much power for one person."),
+    Message(2, Batman, "That's why I gave it to you. Only you can use it."),
+    Message(2, LuciusFox, "Spying on 30 million people isn't part of my job description."),
+])
+
 scenes: List[Scene] = [
     TheMatrix,
     HarryPotterChessGame,
     MeanGirlsCousins,
     LOTR_LeaveTheRing,
+    BatmanTheDarkKnight_TooMuchPower,
 ]
 
 
