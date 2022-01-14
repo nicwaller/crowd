@@ -332,7 +332,8 @@ def handle_view_events(ack, body, logger):
     scene_key = view_response['scene']['scene']['selected_option']['value']
     channel_id = view_response['channel']['channel']['selected_channel']
     delay = int(view_response['delay']['delay']['selected_option']['value'])
-    scene = list(filter(lambda x: x.key == scene_key, scenes))[0]
+    global previous_scene_id
+    (previous_scene_id, scene) = list(filter(lambda x: x[1].key == scene_key, enumerate(scenes)))[0]
     sleep(delay)
     spit(channel_id, scene.messages)
 
