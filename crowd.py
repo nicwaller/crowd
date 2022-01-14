@@ -1,5 +1,6 @@
 import json
 import os
+import re
 from time import sleep
 from typing import List, Optional
 
@@ -180,10 +181,10 @@ scenes: List[Scene] = [
 ]
 
 
-def spit(channel_id: str, conversation: List[Message]):
+def spit(channel_id: str, conversation: List[Message], speed: float = 1.0):
     for message in conversation:
         attachments = []
-        sleep(message.wait)
+        sleep(message.wait / speed)
         if message.text.endswith('.jpg'):
             attachments.append(Attachment(text='', fallback=message.text, image_url=message.text))
             message.text = ''
@@ -338,6 +339,52 @@ def repeat_text(ack, respond, command):
                         ],
                         "action_id": "delay"
                     }
+                },
+                {
+                    "type": "section",
+                    "block_id": "speed",
+                    "text": {
+                        "type": "mrkdwn",
+                        "text": "How fast is the performance?"
+                    },
+                    "accessory": {
+                        "type": "static_select",
+                        "initial_option": {
+                            "text": {
+                                "type": "plain_text",
+                                "text": "Normal",
+                                "emoji": True
+                            },
+                            "value": "1.0"
+                        },
+                        "options": [
+                            {
+                                "text": {
+                                    "type": "plain_text",
+                                    "text": "Slow",
+                                    "emoji": True
+                                },
+                                "value": "0.50"
+                            },
+                            {
+                                "text": {
+                                    "type": "plain_text",
+                                    "text": "Normal",
+                                    "emoji": True
+                                },
+                                "value": "1.0"
+                            },
+                            {
+                                "text": {
+                                    "type": "plain_text",
+                                    "text": "Fast",
+                                    "emoji": True
+                                },
+                                "value": "1.5"
+                            }
+                        ],
+                        "action_id": "speed"
+                    }
                 }
             ]
         }
@@ -352,10 +399,17 @@ def handle_view_events(ack, body, logger):
     scene_key = view_response['scene']['scene']['selected_option']['value']
     channel_id = view_response['channel']['channel']['selected_channel']
     delay = int(view_response['delay']['delay']['selected_option']['value'])
+    speed = float(view_response['speed']['speed']['selected_option']['value'])
     global previous_scene_id
     (previous_scene_id, scene) = list(filter(lambda x: x[1].key == scene_key, enumerate(scenes)))[0]
     sleep(delay)
-    spit(channel_id, scene.messages)
+    spit(channel_id, scene.messages, speed=speed)
+
+
+@app.action(re.compile('.*'))
+def handle_some_action(ack, body, logger):
+    ack()
+    # logger.info(body)
 
 
 if __name__ == "__main__":
