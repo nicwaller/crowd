@@ -172,12 +172,45 @@ BatmanTheDarkKnight_TooMuchPower = Scene('batman-tdk-power', "The Dark Knight (2
     Message(2, LuciusFox, "Spying on 30 million people isn't part of my job description."),
 ])
 
+Anakin = Persona('Anakin Skywalker', icon_url='https://nicwaller-public.s3-us-west-2.amazonaws.com/personas/anakin.jpg')
+Palpatine = Persona('Supreme Chancellor Palpatine', icon_url='https://nicwaller-public.s3-us-west-2.amazonaws.com/personas/palpatine.jpg')
+Ep3DarthPlagueis = Scene('starwars-ep3-darthplagueis', "Star Wars - Episode III (Revenge of the Sith)", [
+    # Supreme Chancellor:
+    # Anakin Skywalker:
+    # Supreme Chancellor:
+    # Anakin Skywalker:
+    # Supreme Chancellor:
+    # Anakin Skywalker:
+    # Supreme Chancellor:
+    # Anakin Skywalker:
+    # Supreme Chancellor:
+    Message(0, Palpatine, "Did you ever hear the tragedy of Darth Plagueis the wise?"),
+    Message(1.5, Anakin, "No."),
+    Message(2, Palpatine, "I thought not. It's not a story the Jedi would tell you. :smirk:"),
+    Message(1.5, Palpatine, "It's a Sith legend... "),
+    Message(2.5, Palpatine, "Darth Plagueis was a Dark Lord of the Sith, so powerful and so wise... "),
+    Message(2.5, Palpatine, "he could use the Force to influence the midichlorians to create... life. :sparkles:"),
+    Message(2.5, Palpatine, "He had such a knowledge of the Dark Side, he could even keep the ones he cared about from dying."),
+    Message(3.5, Anakin, "He could actually... save people from death? :open_mouth:"),
+    Message(2, Palpatine, "The Dark Side of the Force is a pathway to many abilities some consider to be..."),
+    Message(1.5, Palpatine, "_unnatural_."),
+    Message(2.5, Anakin, "What happened to him?"),
+    Message(3, Palpatine, "He became so powerful... the only thing he was afraid of was losing his power"),
+    Message(2, Palpatine, "which eventually, of course, he did."),
+    Message(3, Palpatine, "Unfortunately, he taught his apprentice everything he knew..."),
+    Message(3, Palpatine, "then his apprentice killed him in his sleep. :hocho: Plagueis never saw it coming."),
+    Message(3, Palpatine, "Ironic. He could save others from death, but not himself."),
+    Message(3.5, Anakin, "Is it possible to learn this power?"),
+    Message(2, Palpatine, "Not from a Jedi. :wink:"),
+])
+
 scenes: List[Scene] = [
     TheMatrix,
     HarryPotterChessGame,
     MeanGirlsCousins,
     LOTR_LeaveTheRing,
     BatmanTheDarkKnight_TooMuchPower,
+    Ep3DarthPlagueis,
 ]
 
 
