@@ -1,0 +1,2 @@
+slack-bolt==1.11.1
+certifi==2021.10.8
