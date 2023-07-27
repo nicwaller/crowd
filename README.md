@@ -7,6 +7,7 @@ generate fake conversation in Slack channels
 
 - [The Fellowship of the Ring](#the-fellowship-of-the-ring)
 - [Revenge of the Sith](#revenge-of-the-sith)
+- [The Matrix](#the-matrix)
 - and more!
 
 ## The Fellowship of the Ring
@@ -18,3 +19,7 @@ generate fake conversation in Slack channels
 
 <img width="669" alt="image" src="https://github.com/nicwaller/crowd/assets/2850248/203eb253-6fc5-4277-a7b2-cc71fd9e437e">
 <img width="585" alt="image" src="https://github.com/nicwaller/crowd/assets/2850248/f42f91e7-b924-4ece-979b-280e2f3b93a1">
+
+## The Matrix
+
+<img width="626" alt="image" src="https://github.com/nicwaller/crowd/assets/2850248/77ad3e2d-729b-4ad2-bd58-850ce127da2d">
